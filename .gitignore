@@ -2,6 +2,9 @@
 node_modules
 /dist
 
+yarn.lock
+package-lock.json
+
 /tests/e2e/videos/
 /tests/e2e/screenshots/
 
@@ -20,6 +23,7 @@ yarn.lock
 
 # Firebase
 /.firebase
+firebase-debug.log
 
 # Editor directories and files
 .idea
