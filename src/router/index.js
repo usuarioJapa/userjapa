@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
     name: 'Home',
@@ -15,13 +15,19 @@ Vue.use(VueRouter)
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/LightningDistance.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/LightningDistance.vue'),
+    meta: {
+      title: 'Lightning Distance Calculator'
+    }
   },
   {
     path: '*',
     name: '404',
-    component: () => import(/* webpackChunkName: "about" */ '../views/404.vue')
-  },
+    component: () => import(/* webpackChunkName: "about" */ '../views/404.vue'),
+    meta: {
+      title: 'Not Found!'
+    }
+  }
 ]
 
 const router = new VueRouter({

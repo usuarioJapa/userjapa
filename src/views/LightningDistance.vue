@@ -26,6 +26,7 @@
       </form>
       <button
         class="h-48 w-48 my-5 flex justify-center items-center bg-gray-500 rounded-full focus:outline-none text-white font-bold"
+        type="button"
         @click="click"
       >
         {{ !started ? 'Flash' : 'Thunder'}}
@@ -104,6 +105,14 @@ export default {
     },
     setMessage (seconds) {
       this.message = `The lightning is <strong>${(seconds * 343).toFixed(0)} meters</strong> (or <strong>${((seconds * 343) / 1000).toFixed(2)} kilometers</strong>) away from you`
+    }
+  },
+  watch: {
+    value (val) {
+      if (val) {
+        if (!this.dirty)
+          this.dirty = true
+      }
     }
   }
 }
