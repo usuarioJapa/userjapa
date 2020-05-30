@@ -4,7 +4,7 @@
       <h2 class="font-medium text-3xl">Playground</h2>
     </div>
     <div class="flex-1">
-      <img alt="Vue logo" src="../assets/logo.png">
+      <img alt="Vue logo" src="@/assets/image/logo.png">
     </div>
   </div>
 </template>

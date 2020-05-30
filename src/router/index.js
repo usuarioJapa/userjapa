@@ -3,27 +3,37 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+const Home              = () => import(/* webpackChunkName: "home"               */ '../views/Home.vue'),
+      LightningDistance = () => import(/* webpackChunkName: "lightning-distance" */ '../views/LightningDistance.vue'),
+      TensorFlow        = () => import(/* webpackChunkName: "tensor-flow"        */ '../views/TensorFlow.vue'),
+      NotFound          = () => import(/* webpackChunkName: "not-found"          */ '../views/404.vue')
+
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue')
+    component: Home
   },
   {
     path: '/lightning-distance',
     name: 'LightningDistance',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/LightningDistance.vue'),
+    component: LightningDistance,
     meta: {
       title: 'Lightning Distance Calculator'
     }
   },
   {
+    path: '/tensor-flow',
+    name: 'TensorFlow',
+    component: TensorFlow,
+    meta: {
+      title: 'Tensor Flow'
+    }
+  },
+  {
     path: '*',
     name: '404',
-    component: () => import(/* webpackChunkName: "about" */ '../views/404.vue'),
+    component: NotFound,
     meta: {
       title: 'Not Found!'
     }
