@@ -38,7 +38,7 @@
         >
           <video
             ref="video-player"
-            class="mt-2 flex video-container"
+            class="mt-2 flex"
             poster="@/assets/image/tensorflow-js.png"
             autoplay
             muted
@@ -130,18 +130,20 @@ export default {
         faceapi.draw.drawFaceLandmarks(this.canvas, resizedDetections)
         faceapi.draw.drawFaceExpressions(this.canvas, resizedDetections)
 
-        const avgAge = this.getAvgAgePrediction(resizedDetections[0].age)
 
-        const bottomRight = {
-          x: resizedDetections[0].detection.box.bottomRight.x,
-          y: resizedDetections[0].detection.box.bottomRight.y
+        if (resizedDetections[0]) {
+          const avgAge = this.getAvgAgePrediction(resizedDetections[0].age)
+
+          const bottomRight = {
+            x: resizedDetections[0].detection.box.bottomRight.x,
+            y: resizedDetections[0].detection.box.bottomRight.y
+          }
+
+          new faceapi.draw.DrawTextField([
+            `${faceapi.utils.round(avgAge, 0)} year${avgAge > 1 ? '' : 's'} - ${resizedDetections[0].gender}`],
+            bottomRight
+          ).draw(this.canvas)  
         }
-
-        new faceapi.draw.DrawTextField([
-          `${faceapi.utils.round(avgAge, 0)} year${avgAge > 1 ? '' : 's'} - ${resizedDetections[0].gender}`],
-          bottomRight
-        ).draw(this.canvas)
-
       }, 100)
     },
     getAvgAgePrediction (age) {
@@ -170,12 +172,6 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.video-container {
-  max-height: 75%;
-}
-</style>
 
 <style media="screen">
 .video-canvas {
