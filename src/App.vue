@@ -7,8 +7,8 @@
       <router-link to="/lightning-distance" class="mr-3">
         Lightning Distance
       </router-link>
-      <router-link to="/tensor-flow">
-        Tensor Flow
+      <router-link to="/face-recognition">
+        Face Recognition
       </router-link>
     </div>
     <router-view class="flex-1"/>

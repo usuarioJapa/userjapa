@@ -4,8 +4,7 @@
     class="flex flex-col justify-start mt-5"
   >
     <div class="text-center">
-      <h2 class="font-medium text-lg md:text-xl lg:text-2xl">Tensor Flow</h2>
-      <p class="mt-2 text-sm lg:text-xl">Move the box using gestures on your webcam</p>
+      <h2 class="font-medium text-lg md:text-xl lg:text-2xl">Face Recognition</h2>
     </div>
     <div class="flex-1 flex flex-col">
       <div class="flex justify-center mt-5">
@@ -54,7 +53,7 @@
 import * as faceapi from 'face-api.js'
 
 export default {
-  name: 'TensorFlow',
+  name: 'FaceRecognition',
   data () {
     return {
       devices: [],

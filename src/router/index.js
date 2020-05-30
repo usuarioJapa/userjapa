@@ -5,7 +5,7 @@ Vue.use(VueRouter)
 
 const Home              = () => import(/* webpackChunkName: "home"               */ '../views/Home.vue'),
       LightningDistance = () => import(/* webpackChunkName: "lightning-distance" */ '../views/LightningDistance.vue'),
-      TensorFlow        = () => import(/* webpackChunkName: "tensor-flow"        */ '../views/TensorFlow.vue'),
+      FaceRecognition   = () => import(/* webpackChunkName: "face-recognition"   */ '../views/FaceRecognition.vue'),
       NotFound          = () => import(/* webpackChunkName: "not-found"          */ '../views/404.vue')
 
 const routes = [
@@ -23,11 +23,11 @@ const routes = [
     }
   },
   {
-    path: '/tensor-flow',
-    name: 'TensorFlow',
-    component: TensorFlow,
+    path: '/face-recognition',
+    name: 'FaceRecognition',
+    component: FaceRecognition,
     meta: {
-      title: 'Tensor Flow'
+      title: 'Face Recognition'
     }
   },
   {
