@@ -7,7 +7,27 @@ import store from './store'
 // Tailwind
 import './assets/style/tailwind.css'
 
+// Font Awesome
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import {
+  faTelegram,
+  faLinkedin,
+  faGithub
+} from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon  } from '@fortawesome/vue-fontawesome'
+
 Vue.config.productionTip = false
+
+// Setting Font Awesome
+library.add(
+  faEnvelope,
+  faTelegram,
+  faLinkedin,
+  faGithub
+)
+
+Vue.component('fa-icon', FontAwesomeIcon)
 
 const titleDefault = document.title
 
